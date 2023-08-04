@@ -1,0 +1,151 @@
+:root {
+  --blue: #38469c;
+  --lightblue: #0b99d8;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  max-width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+main {
+  height: fit-content;
+  background-color: var(--blue);
+  color: white;
+  text-align: center;
+  padding: 4rem;
+  border: solid 8px var(--lightblue);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border: unset;
+  background-color: unset;
+  outline: unset;
+  border-bottom: solid 8px var(--lightblue);
+  color: white;
+}
+
+label {
+  position: absolute;
+  align-self: flex-start;
+  color: var(--lightblue);
+  font-size: 0.95rem;
+  bottom: 50%;
+
+  transition: bottom 0.3s ease;
+}
+
+.input-group:focus-within label {
+  font-size: 0.85rem;
+  bottom: 100%;
+}
+
+input:valid + label {
+  font-size: 0.85rem;
+  bottom: 100%;
+}
+
+button {
+  background-color: unset;
+  border: solid 2px white;
+  outline: unset;
+  color: white;
+  width: 160px;
+  padding: 0.6rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline {
+  border-color: white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #38469c;
+}
+
+.btn-filled {
+  background-color: var(--lightblue);
+  border: solid 2px var(--lightblue);
+}
+
+.btn-filled:hover {
+  background-color: var(--blue);
+  border: solid 2px var(--blue);
+}
+
+/* MODAL */
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000000;
+}
+
+.modal-window {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal hr {
+  width: 100%;
+}
+
+.modal h2,
+.modal p {
+  padding: 1rem;
+}
+
+.modal-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+/**********/
+
+.d-none {
+  display: none;
+}
